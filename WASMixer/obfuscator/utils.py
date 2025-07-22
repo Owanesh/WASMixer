@@ -21,7 +21,7 @@ def get_instrs_max_stack_depth(binary, instr_list):
                 current_stack += len(binary.module.type_sec[instr.args.bt].result_types) - len(
                     binary.module.type_sec[instr.args.bt].param_types)
             elif 0 > instr.args.bt > -64:
-                current_stack += -1
+                current_stack += 1
             elif instr.args.bt == -64:
                 pass
         elif instr.opcode == Call:
